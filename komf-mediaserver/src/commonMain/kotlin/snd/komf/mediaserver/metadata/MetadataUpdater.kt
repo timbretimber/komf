@@ -152,12 +152,12 @@ class MetadataUpdater(
 
     private suspend fun replaceBookThumbnail(bookId: MediaServerBookId, thumbnail: Image?): MediaServerThumbnailId? {
         val existingMatch = bookThumbnailsRepository.findFor(bookId)
-        val thumbnails = mediaServerClient.getBookThumbnails(bookId)
-
-        val selectThumbnail = overrideExistingCovers ||
-                thumbnails.all { it.type == "GENERATED" || it.id == existingMatch?.thumbnailId }
 
         val uploadedThumbnail = thumbnail?.let {
+            val thumbnails = mediaServerClient.getBookThumbnails(bookId)
+            val selectThumbnail = overrideExistingCovers ||
+                    thumbnails.all { it.type == "GENERATED" || it.id == existingMatch?.thumbnailId }
+
             mediaServerClient.uploadBookThumbnail(
                 bookId = bookId,
                 thumbnail = thumbnail,
@@ -179,11 +179,12 @@ class MetadataUpdater(
         thumbnail: Image?
     ): MediaServerThumbnailId? {
         val matchedSeries = seriesThumbnailsRepository.findFor(seriesId)
-        val thumbnails = mediaServerClient.getSeriesThumbnails(seriesId)
 
-        val selectThumbnail = overrideExistingCovers || thumbnails.isEmpty()
 
         val uploadedThumbnail = thumbnail?.let {
+            val thumbnails = mediaServerClient.getSeriesThumbnails(seriesId)
+            val selectThumbnail = overrideExistingCovers || thumbnails.isEmpty()
+
             mediaServerClient.uploadSeriesThumbnail(
                 seriesId = seriesId,
                 thumbnail = thumbnail,
