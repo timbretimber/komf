@@ -13,3 +13,6 @@ tasks.wrapper {
     gradleVersion = "8.9"
     distributionType = Wrapper.DistributionType.ALL
 }
+dependencies {
+    implementation("com.github.timbretimber:komga-client:0.9.1")
+}
