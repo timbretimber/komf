@@ -1,4 +1,7 @@
 plugins {
+
+    kotlin("jvm") version "1.9.23"
+    `java-library`
     // this is necessary to avoid the plugins to be loaded multiple times
     // in each subproject's classloader
     alias(libs.plugins.androidLibrary) apply false
@@ -8,8 +11,6 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.mavenPublish) apply false
 
-    kotlin("jvm") version "1.9.23"
-    `java-library`
 }
 
 tasks.wrapper {
