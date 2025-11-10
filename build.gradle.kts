@@ -14,5 +14,5 @@ tasks.wrapper {
     distributionType = Wrapper.DistributionType.ALL
 }
 dependencies {
-    implementation("com.github.timbretimber:komga-client:0.9.1")
+    implementation("com.github.timbretimber:komga-client:0.9.3")
 }
