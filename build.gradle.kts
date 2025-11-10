@@ -7,6 +7,9 @@ plugins {
     alias(libs.plugins.kotlinJvm) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
     alias(libs.plugins.mavenPublish) apply false
+
+    kotlin("jvm") version "1.9.23"
+    `java-library`
 }
 
 tasks.wrapper {
