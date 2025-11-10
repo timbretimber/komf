@@ -13,3 +13,7 @@ tasks.wrapper {
     gradleVersion = "8.9"
     distributionType = Wrapper.DistributionType.ALL
 }
+
+dependencies {
+    implementation("com.github.timbretimber:komga-client:apikey-auth")
+}

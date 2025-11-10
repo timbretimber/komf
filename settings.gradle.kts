@@ -12,10 +12,12 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
         maven("https://maven.pkg.jetbrains.space/public/p/ktor/eap")
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
 }
+
 
 include(":komf-app")
 include(":komf-core")

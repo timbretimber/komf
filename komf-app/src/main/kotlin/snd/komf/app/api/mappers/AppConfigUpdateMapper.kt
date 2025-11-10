@@ -285,6 +285,7 @@ class AppConfigUpdateMapper {
             baseUri = (patch.baseUri.getOrNull() ?: config.baseUri).removeSuffix("/"),
             komgaUser = patch.komgaUser.getOrNull() ?: config.komgaUser,
             komgaPassword = patch.komgaPassword.getOrNull() ?: config.komgaPassword,
+            komgaApiKey = patch.komgaApiKey.getOrNull() ?: config.komgaApiKey,
             eventListener = patch.eventListener.getOrNull()
                 ?.let { eventListener(config.eventListener, it) }
                 ?: config.eventListener,

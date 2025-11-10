@@ -465,6 +465,7 @@ class DeprecatedConfigUpdateMapper {
             baseUri = patch.baseUri ?: config.baseUri,
             komgaUser = patch.komgaUser ?: config.komgaUser,
             komgaPassword = patch.komgaPassword ?: config.komgaPassword,
+            komgaApiKey = patch.komgaApiKey ?: config.komgaApiKey,
             eventListener = eventListener(config.eventListener, patch.eventListener, patch.notifications),
             metadataUpdate = patch.metadataUpdate?.let { metadataUpdate(config.metadataUpdate, it) }
                 ?: config.metadataUpdate,

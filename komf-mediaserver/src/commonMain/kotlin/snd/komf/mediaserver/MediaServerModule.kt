@@ -105,6 +105,7 @@ class MediaServerModule(
             .cookieStorage(AcceptAllCookiesStorage())
             .username(komgaConfig.komgaUser)
             .password(komgaConfig.komgaPassword)
+            .apiKey(komgaConfig.komgaApiKey)
             .baseUrlBuilder { URLBuilder(komgaConfig.baseUri).appendPathSegments("/") }
             .useragent(komfUserAgent)
             .build()

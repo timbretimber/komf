@@ -98,6 +98,7 @@ komga:
   baseUri: http://localhost:25600 #or env:KOMF_KOMGA_BASE_URI
   komgaUser: admin@example.org #or env:KOMF_KOMGA_USER
   komgaPassword: admin #or env:KOMF_KOMGA_PASSWORD
+  komgaApiKey: 00000000000000000000000000000000 #or env:KOMF_KOMGA_API_KEY
   eventListener:
     enabled: false # if disabled will not connect to komga and won't pick up newly added entries
     metadataLibraryFilter: [ ]  # listen to all events if empty
@@ -165,12 +166,12 @@ kavita:
 notifications:
   templatesDirectory: "./" # path to a directory with templates
   discord:
-    # List of discord webhook urls. Will call these webhooks after series or books were added. 
+    # List of discord webhook urls. Will call these webhooks after series or books were added.
     webhooks: # config example: webhooks: ["https://discord.com/api/webhooks/9..."] (env:KOMF_DISCORD_WEBHOOKS - comma separated list of webhooks)
     seriesCover: false # include series cover in message
     embedColor: "1F8B4C"
   apprise:
-    # List of apprise urls. Will call these after series or books were added. 
+    # List of apprise urls. Will call these after series or books were added.
     urls:
     seriesCover: false # include series cover as attachment
 
@@ -180,7 +181,7 @@ database:
 metadataProviders:
   malClientId: "" # required for mal provider. See https://myanimelist.net/forum/?topicid=1973077 env:KOMF_METADATA_PROVIDERS_MAL_CLIENT_ID
   comicVineApiKey: # required for comicVine provider https://comicvine.gamespot.com/api/ env:KOMF_METADATA_PROVIDERS_COMIC_VINE_API_KEY
-  comicVineSearchLimit: # define ComicVine search result Limit, default is 10 
+  comicVineSearchLimit: # define ComicVine search result Limit, default is 10
   bangumiToken: # bangumi provider require a token to show nsfw items https://next.bgm.tv/demo/access-token  env:KOMF_METADATA_PROVIDERS_BANGUMI_TOKEN
   defaultProviders:
     mangaUpdates:
@@ -238,7 +239,7 @@ metadataProviders:
       priority: 140
       enabled: false
       # Datasource used for metadata retrieval. DATABASE mode will only work if MangaBaka database is installed
-      # API or DATABASE 
+      # API or DATABASE
       mode: API
 
 server:

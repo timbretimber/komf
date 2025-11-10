@@ -59,6 +59,7 @@ class ConfigLoader(private val yaml: Yaml) {
         val komgaBaseUri = System.getenv("KOMF_KOMGA_BASE_URI")?.ifBlank { null } ?: komgaConfig.baseUri
         val komgaUser = System.getenv("KOMF_KOMGA_USER")?.ifBlank { null } ?: komgaConfig.komgaUser
         val komgaPassword = System.getenv("KOMF_KOMGA_PASSWORD")?.ifBlank { null } ?: komgaConfig.komgaPassword
+        val komgaApiKey = System.getenv("KOMG_KOMGA_API_KEY")?.ifBlank { null } ?: komgaConfig.komgaApiKey
 
         val kavitaConfig = config.kavita
         val kavitaBaseUri = System.getenv("KOMF_KAVITA_BASE_URI")?.ifBlank { null } ?: kavitaConfig.baseUri
@@ -82,7 +83,8 @@ class ConfigLoader(private val yaml: Yaml) {
             komga = komgaConfig.copy(
                 baseUri = komgaBaseUri,
                 komgaUser = komgaUser,
-                komgaPassword = komgaPassword
+                komgaPassword = komgaPassword,
+                komgaApiKey = komgaApiKey
             ),
             kavita = kavitaConfig.copy(
                 baseUri = kavitaBaseUri,

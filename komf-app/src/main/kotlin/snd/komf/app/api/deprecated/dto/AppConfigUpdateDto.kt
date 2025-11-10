@@ -26,6 +26,7 @@ data class KomgaConfigUpdateDto(
     val baseUri: String? = null,
     val komgaUser: String? = null,
     val komgaPassword: String? = null,
+    val komgaApiKey: String? = null,
     val eventListener: EventListenerConfigUpdateDto? = null,
     val notifications: NotificationConfigUpdateDto? = null,
     val metadataUpdate: MetadataUpdateConfigUpdateDto? = null,

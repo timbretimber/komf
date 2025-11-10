@@ -23,6 +23,7 @@ data class KomgaConfigUpdateRequest(
     val baseUri: PatchValue<String> = PatchValue.Unset,
     val komgaUser: PatchValue<String> = PatchValue.Unset,
     val komgaPassword: PatchValue<String> = PatchValue.Unset,
+    val komgaApiKey: PatchValue<String> = PatchValue.Unset,
     val eventListener: PatchValue<EventListenerConfigUpdateRequest> = PatchValue.Unset,
     val metadataUpdate: PatchValue<MetadataUpdateConfigUpdateRequest> = PatchValue.Unset,
 )
